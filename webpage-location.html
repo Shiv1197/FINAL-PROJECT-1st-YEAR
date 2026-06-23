@@ -1,0 +1,507 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title data-i18n="home.pageTitle">AMAZON</title>
+        <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+     <link rel="stylesheet" href="style-grid.css">
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <a class="logo-link" href="webpage-location.html" aria-label="Amazon.in home">
+                    <span class="logo-sprite" aria-hidden="true"></span>
+                </a>
+                <button class="location" type="button" onclick="window.location.href='location-picker.html'">
+                    <div class="loco">
+                        <span class="location-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+                                <path d="M12 2.75a6.74 6.74 0 0 0-6.75 6.74c0 4.68 5.1 10.24 6.32 11.5a.62.62 0 0 0 .86 0c1.22-1.26 6.32-6.82 6.32-11.5A6.74 6.74 0 0 0 12 2.75Zm0 9.25a2.5 2.5 0 1 1 2.5-2.5A2.5 2.5 0 0 1 12 12Z"></path>
+                            </svg>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="delivery-text" data-i18n="nav.delivery">Delivering to Ghaziabad 201009</span><br>
+                        <span class="delivery-action"><b data-i18n="nav.updateLocation">Update Location</b></span>
+                    </div>
+                </button>
+                <div class="find">
+                    <select class="search-select">
+                        <option data-i18n="nav.searchCategory.all">All</option>
+                        <option data-i18n="nav.searchCategory.electronics">Electronics</option>
+                        <option data-i18n="nav.searchCategory.mobiles">Mobiles</option>
+                        <option data-i18n="nav.searchCategory.fashion">Fashion</option>
+                    </select>
+                    <input type="text" class="search" placeholder="Search Amazon.in" data-i18n-placeholder="nav.searchPlaceholder">
+                    <button class="search-btn" type="button" aria-label="Search Amazon.in">
+                        <span class="search-icon" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div class="lang-btn">
+                    <button class="language" style="color: white;">
+                        <img src="https://flagcdn.com/w40/in.png" style="margin-right: 4px;" alt="India">
+                        <div>
+                            <select class="lang-select">
+                                <option value="en" data-i18n="nav.language.english">EN - English</option>
+                                <option value="hi" data-i18n="nav.language.hindi">HI - Hindi</option>
+                                <option value="ta" data-i18n="nav.language.tamil">TA - Tamil</option>
+                                <option value="te" data-i18n="nav.language.telugu">TE - Telugu</option>
+                                <option value="kn" data-i18n="nav.language.kannada">KN - Kannada</option>
+                                <option value="ml" data-i18n="nav.language.malayalam">ML - Malayalam</option>
+                                <option value="bn" data-i18n="nav.language.bengali">BN - Bengali</option>
+                                <option value="mr" data-i18n="nav.language.marathi">MR - Marathi</option>
+                            </select>
+                        </div>
+                    </button>
+                </div>
+                <button class="sign-in-btn" id="openSignInModal" style="background: none ; color: white" type="button"><span id="signInGreetingText" data-i18n="nav.signInGreeting">Hello, sign in</span><br><b id="accountListsText" data-i18n="nav.accountsLists">Accounts & Lists</b></button>
+                <button class="returns-order-btn" id="openOrdersButton" type="button"><span data-i18n="nav.returns">Returns</span><br><b data-i18n="nav.orders">& Orders</b></button>
+                <button class="cart-btn" id="openCartButton" type="button" data-count="0"><b data-i18n="nav.cart">Cart</b></button>
+            </div>
+            <div class="taskbar">
+                <button class="menu-btn">&#9776; <b data-i18n="nav.menuAll">All</b></button>
+                <button class="task-btn" data-i18n="nav.fresh">Fresh</button>
+                <button class="task-btn" data-i18n="nav.mxPlayer">MX Player</button>
+                <button class="task-btn" data-i18n="nav.sell">Sell</button>
+                <button class="task-btn" data-i18n="nav.bestsellers">Bestsellers</button>
+                <button class="task-btn" data-i18n="nav.mobiles">Mobiles</button>
+                <button class="task-btn" data-i18n="nav.todaysDeals">Today's Deals</button>
+                <button class="task-btn" data-i18n="nav.customerService">Customer Service</button>
+                <button class="task-btn" data-i18n="nav.prime">Prime</button>
+                <button class="task-btn" data-i18n="nav.amazonPay">Amazon Pay</button>
+                <button class="task-btn" data-i18n="nav.newReleases">New Releases</button>
+                <button class="task-btn" data-i18n="nav.electronics">Electronics</button>
+                <button class="task-btn" data-i18n="nav.fashion">Fashion</button>
+                <button class="task-btn" data-i18n="nav.homeKitchen">Home & Kitchen</button>
+                <button class="task-btn" data-i18n="nav.books">Books</button>
+                <button class="task-btn" data-i18n="nav.computers">Computers</button>
+                <button class="task-btn" data-i18n="nav.giftCards">Gift Cards</button>
+                <button class="task-btn" data-i18n="nav.beautyPersonalCare">Beauty & Personal Care</button>
+                <button class="task-btn" data-i18n="nav.carMotorbike">Car & Motorbike</button>
+                <button class="task-btn" data-i18n="nav.homeImprovement">Home Improvement</button>
+            </div>
+        </header>
+        <main class="main">
+             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+<button class="carousel-control-prev" type="button" 
+        data-bs-target="#carouselExampleSlidesOnly" 
+        data-bs-slide="prev">
+  <span class="carousel-control-prev-icon"></span>
+</button>
+<button class="carousel-control-next" type="button" 
+        data-bs-target="#carouselExampleSlidesOnly" 
+        data-bs-slide="next">
+  <span class="carousel-control-next-icon"></span>
+</button>
+          <div class="carousel-item active">
+            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/WLA/2025/Uber/Unrec_GW/Updated/D323819370_3000._CB788515770_.jpg" class="d-block w-100" alt="Slide 1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Beauty/GW/yesbank/makeup_PC._CB796616147_.png" class="d-block w-100" alt="Slide 2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/CEPC/Dec/amazonspecial/BFCM25_GW_PC_Hero._CB775393558_.jpg  " class="d-block w-100" alt="Slide 3">
+          </div>
+        </div>
+        </div>
+            <div class="main-cards">
+                <div class="card">
+                    <b data-i18n="home.cards.revamp.title">Revamp your home in style</b>
+                    <div class="card-grid">
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/71ZtX+XF0SL._AC_UL320_.jpg" alt="Cushion covers">
+                            <button class="info" style="background: none ; color: #3b3b3b" onclick="window.location.href='cushion.html'" data-i18n="home.cards.revamp.cushion">Cushion covers</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/81lq8DMvEpL._AC_UL320_.jpg" alt="Figurines and vases">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.revamp.figurines">Figurines & vases</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/61TGmD48a3L._AC_UL320_.jpg" alt="Home storage">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.revamp.storage">Home storage</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/71R6vViEU8L._AC_UL320_.jpg" alt="Lighting solutions">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.revamp.lighting">Lighting solutions</button>
+                        </div>
+                    </div>
+                    <a href="#" data-i18n="home.cards.revamp.link">Explore all</a>
+                </div>
+                <div class="card">
+                    <b data-i18n="home.cards.bulk.title">Bulk order discounts + Up to 18% GST savings</b>
+                    <div class="card-grid">
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/71ouu-iX3pL._AC_UY218_.jpg" alt="Laptops">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.bulk.laptops">Up to 45% off | Laptops</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/71rH4vEE4nL._AC_UY218_.jpg" alt="Kitchen appliances">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.bulk.kitchen">Up to 60% off | Kitchen</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/71zC-swECpL._AC_UL320_.jpg" alt="Office chairs">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.bulk.office">Min. 50% off | Office</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/611WVbfqb3L._AC_UL320_.jpg" alt="Business purchases">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.bulk.business">Business purchases</button>
+                        </div>
+                    </div>
+                    <a href="#" data-i18n="home.cards.bulk.link">Create a free account</a>
+                </div>
+                <div class="card">
+                    <b data-i18n="home.cards.appliances.title">Appliances for your home | Up to 55% off</b>
+                    <div class="card-grid">
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/71SXbtgMlLL._AC_UY218_.jpg" alt="Air conditioners">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.appliances.ac">Air conditioners</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/61UQ3UV3b4L._AC_UY218_.jpg" alt="Refrigerators">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.appliances.fridge">Refrigerators</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/61vQxewGCiL._AC_UY218_.jpg" alt="Microwaves">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.appliances.microwave">Microwaves</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/817+GVxp-6L._AC_UY218_.jpg" alt="Washing machines">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.appliances.washing">Washing machines</button>
+                        </div>
+                    </div>
+                    <a href="#" data-i18n="home.cards.appliances.link">See more</a>
+                </div>
+                <div class="card">
+                    <b data-i18n="home.cards.headphones.title">Starting ₹149 | Headphones</b>
+                    <div class="card-grid">
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/61+SW9nDTEL._AC_UY218_.jpg" alt="boat">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.headphones.boat">Starting ₹249 | boat</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/615ARblI-qL._AC_UY218_.jpg" alt="Boult">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.headphones.boult">Starting ₹349 | Boult</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/517lSvEVVsL._AC_UY218_.jpg" alt="Noise">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.headphones.noise">Starting ₹649 | Noise</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/61qArVOtW3L._AC_UY218_.jpg" alt="Zebronics">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.headphones.zebronics">Starting ₹149 | Zebronics</button>
+                        </div>
+                    </div>
+                    <a href="#" data-i18n="home.cards.headphones.link">See all offers</a>
+                </div>
+            </div>
+            <div class="main2-cards">
+                <div class="card">
+                    <b data-i18n="home.cards.essentials.title">Starting ₹49 | Deals on home essentials</b>
+                    <div class="card-grid">
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/61CE7f353AL._AC_UL320_.jpg" alt="Cleaning supplies">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.essentials.cleaning">Cleaning supplies</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/61iyI7eNxdL._AC_UL320_.jpg" alt="Bathroom accessories">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.essentials.bathroom">Bathroom accessories</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/71m7PNbXe1L._AC_UL320_.jpg" alt="Home tools">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.essentials.tools">Home tools</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/71KE5x4MVgS._AC_UL320_.jpg" alt="Wallpapers">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.essentials.wallpapers">Wallpapers</button>
+                        </div>
+                    </div>
+                    <a href="#" data-i18n="home.cards.essentials.link">Explore all</a>
+                </div>
+                <div class="card">
+                    <b data-i18n="home.cards.automotive.title">Automotive essentials | Up to 60% off</b>
+                    <div class="card-grid">
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/81W51oHKKvL._AC_UL320_.jpg" alt="Cleaning accessories">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.automotive.cleaning">Cleaning accessories</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/61RQk7Qx9LL._AC_UL320_.jpg" alt="Tyre and rim care">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.automotive.tyre">Tyre & rim care</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/61FYlYtnZCL._AC_UL320_.jpg" alt="Helmets">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.automotive.helmets">Helmets</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/61-ElaLP1oL._AC_UL320_.jpg" alt="Vacuum cleaner">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.automotive.vacuum">Vacuum cleaner</button>
+                        </div>
+                    </div>
+                    <a href="#" data-i18n="home.cards.automotive.link">See more</a>
+                </div>
+                <div class="card">
+                    <b data-i18n="home.cards.brands.title">Starting ₹199 | Amazon Brands & more</b>
+                    <div class="card-grid">
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/71FXqpnmpzL._AC_UL320_.jpg" alt="Bedsheets">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.brands.bedsheets">Starting ₹199 | Bedsheets</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/81EdoMnAyCL._AC_UL320_.jpg" alt="Curtains">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.brands.curtains">Starting ₹199 | Curtains</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/813Li-CVe+L._AC_UL320_.jpg" alt="Ironing board">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.brands.ironing">Minimum 40% off | Ironing board & more</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/81Ota-b141L._AC_UL320_.jpg" alt="Home decor">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.brands.decor">Up to 60% off | Home decor</button>
+                        </div>
+                    </div>
+                    <a href="#" data-i18n="home.cards.brands.link">See more</a>
+                </div>
+                <div class="card">
+                    <b data-i18n="home.cards.baby.title">Up to 50% off | Baby care & toys | Amazon Brands</b>
+                    <div class="card-grid">
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/71Cd9g15QZL._AC_UL320_.jpg" alt="Baby diapers and wipes">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.baby.diapers">Up to 50% off | Baby diapers & wipes</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/61CTjPpK6AL._AC_UL320_.jpg" alt="Ride ons">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.baby.rideons">Up to 50% off | Ride ons</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/51Hf50G83aL._AC_UL320_.jpg" alt="RC cars">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.baby.rccars">Starting ₹649 | RC cars</button>
+                        </div>
+                        <div>
+                            <img src="https://m.media-amazon.com/images/I/519oy9rc5WL._AC_UL320_.jpg" alt="Baby safety essentials">
+                            <button class="info" style="background: none ; color:#3b3b3b" data-i18n="home.cards.baby.safety">Up to 50% off | Baby safety essentials</button>
+                        </div>
+                    </div>
+                    <a href="#" data-i18n="home.cards.baby.link">See all offers</a>
+                </div>
+            </div>
+            <div class="scroll-row">
+                <div class="scroll-card">
+                    <b data-i18n="home.scroll.title">Starting ₹70,348 | From daily commutes to weekend thrills</b>
+                    <div class="scroll-items">
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/41cPVqv6fML._AC_SY200_.jpg" alt="Product 1"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/51Dh4tQ8jiL._AC_SY200_.jpg" alt="Product 2"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/51UAsPAhpFL._AC_SY200_.jpg" alt="Product 3"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/61agMR857NL._AC_SY200_.jpg" alt="Product 4"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/61BLhBS-1tL._AC_SY200_.jpg" alt="Product 5"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71+CsirvJ2L._AC_SY200_.jpg" alt="Product 6"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71dIZrsz2LL._AC_SY200_.jpg" alt="Product 7"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71eVxoBbUsL._AC_SY200_.jpg" alt="Product 8"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71GvHvqqFKL._AC_SY200_.jpg" alt="Product 9"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71hbadRlx-L._AC_SY200_.jpg" alt="Product 10"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71JVMUr1k5L._AC_SY200_.jpg" alt="Product 11"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71n2GOWccWL._AC_SY200_.jpg" alt="Product 12"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71nDkywMc2L._AC_SY200_.jpg" alt="Product 13"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71RfLrAqGgL._AC_SY200_.jpg" alt="Product 14"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71sWj2oOFnL._AC_SY200_.jpg" alt="Product 15"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71V61d8jm9L._AC_SY200_.jpg" alt="Product 16"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71Wnw7s8XHL._AC_SY200_.jpg" alt="Product 17"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/717D4EU0adL._AC_SY200_.jpg" alt="Product 18"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/81Bdg2E1LFL._AC_SY200_.jpg" alt="Product 19"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/615tp46ZxWL._AC_SY200_.jpg" alt="Product 20"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/617VVyhYS9L._AC_SY200_.jpg" alt="Product 21"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/711g1waxWpL._AC_SY200_.jpg" alt="Product 22"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/716pIiauYfL._AC_SY200_.jpg" alt="Product 23"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/717D4EU0adL._AC_SY200_.jpg" alt="Product 24"></div>
+                        <div class="scroll-item"><img src="https://m.media-amazon.com/images/I/71zKnIsrqML._AC_SY200_.jpg" alt="Product 25"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="signin-modal" id="signinModal" aria-hidden="true">
+            <div class="signin-modal-backdrop" data-close-signin="true"></div>
+            <div class="signin-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="signinModalTitle">
+                <button class="signin-modal-close" id="closeSignInModal" type="button" aria-label="Close sign in">X</button>
+                <div class="signin-modal-logo-wrap">
+                    <span class="signin-modal-logo-sprite" aria-hidden="true"></span>
+                </div>
+                <div class="signin-modal-card">
+                    <div class="signin-modal-body">
+                        <h1 id="signinModalTitle" data-i18n="signin.createAccount">Create Account</h1>
+                        <label for="signinCustomerName">Customer name</label>
+                        <input id="signinCustomerName" type="text" name="customerName" placeholder="Enter your name" autocomplete="name" required>
+                        <label for="signinEmail" data-i18n="signin.emailLabel">Email</label>
+                        <input id="signinEmail" type="email" name="Email" placeholder="Email" data-i18n-placeholder="signin.emailPlaceholder" required>
+                        <label for="signinMobile" data-i18n="signin.mobileLabel">Mobile number</label>
+                        <input id="signinMobile" type="tel" name="contact" placeholder="Mobile number" data-i18n-placeholder="signin.mobilePlaceholder" required>
+                        <label for="signinPassword" data-i18n="signin.passwordLabel">Password (at least 6 characters)</label>
+                        <input id="signinPassword" type="password" name="Password" placeholder="Password" data-i18n-placeholder="signin.passwordPlaceholder" required>
+                        <p class="signin-help" data-i18n="signin.passwordHelp">Passwords must be at least 6 characters.</p>
+                        <form id="signinModalForm">
+                            <input type="submit" value="Sign up" data-i18n-value="signin.submit">
+                        </form>
+                        <p class="signin-terms" data-i18n="signin.terms">By creating an account or logging in, you agree to Amazon's Conditions of Use and Privacy Policy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="amazon-footer">
+            <div class="footer-top">
+                <div class="footer-col">
+                    <h4 data-i18n="footer.knowUs.title">Get to Know Us</h4>
+                    <a href="#" data-i18n="footer.knowUs.about">About Amazon</a>
+                    <a href="#" data-i18n="footer.knowUs.careers">Careers</a>
+                    <a href="#" data-i18n="footer.knowUs.press">Press Releases</a>
+                    <a href="#" data-i18n="footer.knowUs.science">Amazon Science</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.connect.title">Connect with Us</h4>
+                    <a href="#" data-i18n="footer.connect.facebook">Facebook</a>
+                    <a href="#" data-i18n="footer.connect.twitter">Twitter</a>
+                    <a href="#" data-i18n="footer.connect.instagram">Instagram</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.earn.title">Make Money with Us</h4>
+                    <a href="#" data-i18n="footer.earn.sell">Sell on Amazon</a>
+                    <a href="#" data-i18n="footer.earn.accelerator">Sell under Amazon Accelerator</a>
+                    <a href="#" data-i18n="footer.earn.protect">Protect and Build Your Brand</a>
+                    <a href="#" data-i18n="footer.earn.global">Amazon Global Selling</a>
+                    <a href="#" data-i18n="footer.earn.supply">Supply to Amazon</a>
+                    <a href="#" data-i18n="footer.earn.affiliate">Become an Affiliate</a>
+                    <a href="#" data-i18n="footer.earn.fulfilment">Fulfilment by Amazon</a>
+                    <a href="#" data-i18n="footer.earn.advertise">Advertise Your Products</a>
+                    <a href="#" data-i18n="footer.earn.pay">Amazon Pay on Merchants</a>
+                </div>
+                <div class="footer-col">
+                    <h4 data-i18n="footer.help.title">Let Us Help You</h4>
+                    <a href="#" data-i18n="footer.help.account">Your Account</a>
+                    <a href="#" data-i18n="footer.help.returns">Returns Centre</a>
+                    <a href="#" data-i18n="footer.help.recalls">Recalls and Product Safety Alerts</a>
+                    <a href="#" data-i18n="footer.help.protection">100% Purchase Protection</a>
+                    <a href="#" data-i18n="footer.help.app">Amazon App Download</a>
+                    <a href="#" data-i18n="footer.help.help">Help</a>
+                </div>
+            </div>
+            <div class="footer-middle">
+                <span class="footer-logo-sprite" aria-hidden="true"></span>
+                <div class="footer-select">
+                    <span data-i18n="footer.language">English</span>
+                </div>
+                <div class="footer-select">
+                    <img src="https://flagcdn.com/w40/in.png" style="height: 18px;" alt="India"> <span data-i18n="footer.country">India</span>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-services">
+                    <div>
+                        <b data-i18n="footer.services.abebooks.title">AbeBooks</b>
+                        <span data-i18n="footer.services.abebooks.desc">Books, art & collectibles</span>
+                    </div>
+                    <div>
+                        <b data-i18n="footer.services.aws.title">Amazon Web Services</b>
+                        <span data-i18n="footer.services.aws.desc">Scalable Cloud Computing Services</span>
+                    </div>
+                    <div>
+                        <b data-i18n="footer.services.audible.title">Audible</b>
+                        <span data-i18n="footer.services.audible.desc">Download Audio Books</span>
+                    </div>
+                    <div>
+                        <b data-i18n="footer.services.imdb.title">IMDb</b>
+                        <span data-i18n="footer.services.imdb.desc">Movies, TV & Celebrities</span>
+                    </div>
+                </div>
+                <div class="footer-legal">
+                    <a href="#" data-i18n="footer.legal.conditions">Conditions of Use & Sale</a>
+                    <a href="#" data-i18n="footer.legal.privacy">Privacy Notice</a>
+                    <a href="#" data-i18n="footer.legal.ads">Interest-Based Ads</a>
+                    <p data-i18n="footer.legal.copyright">© 1996-2025, Amazon.com, Inc. or its affiliates</p>
+                </div>
+            </div>
+        </footer>
+        <script src="i18n.js"></script>
+        <script src="home-location.js"></script>
+        <script src="signin-modal.js"></script>
+        <script>
+           const CUSTOMER_STORAGE_KEY = "signed-in-customer";
+
+function getStoredCustomer() {
+    try {
+        const rawCustomer = localStorage.getItem(CUSTOMER_STORAGE_KEY);
+        return rawCustomer ? JSON.parse(rawCustomer) : null;
+    } catch (error) {
+        return null;
+    }
+}
+
+function saveCustomer(customer) {
+    localStorage.setItem(CUSTOMER_STORAGE_KEY, JSON.stringify(customer));
+}
+
+function updateCustomerGreeting() {
+    const greetingText = document.getElementById("signInGreetingText");
+    const accountText = document.getElementById("accountListsText");
+    const storedCustomer = getStoredCustomer();
+
+    if (!greetingText || !accountText) {
+        return;
+    }
+
+    if (storedCustomer?.name) {
+        greetingText.removeAttribute("data-i18n");
+        greetingText.textContent = `Hello, ${storedCustomer.name}`;
+        return;
+    }
+
+    greetingText.setAttribute("data-i18n", "nav.signInGreeting");
+    accountText.setAttribute("data-i18n", "nav.accountsLists");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("signinModalForm");
+    const nameInput = document.getElementById("signinCustomerName");
+    const emailInput = document.getElementById("signinEmail");
+    const mobileInput = document.getElementById("signinMobile");
+    const passwordInput = document.getElementById("signinPassword");
+
+    updateCustomerGreeting();
+
+    if (!form || !nameInput || !emailInput || !mobileInput || !passwordInput) {
+        return;
+    }
+
+    form.addEventListener("submit", (event) => {
+        const fields = [nameInput, emailInput, mobileInput, passwordInput];
+        const firstInvalidField = fields.find((field) => !field.value.trim());
+
+        if (firstInvalidField) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            firstInvalidField.reportValidity();
+            firstInvalidField.focus();
+            return;
+        }
+
+        saveCustomer({
+            name: nameInput.value.trim(),
+            email: emailInput.value.trim(),
+            mobile: mobileInput.value.trim()
+        });
+
+        updateCustomerGreeting();
+
+        nameInput.value = "";
+        emailInput.value = "";
+        mobileInput.value = "";
+        passwordInput.value = "";
+    }, true);
+});
+
+document.addEventListener("language-applied", updateCustomerGreeting);
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>

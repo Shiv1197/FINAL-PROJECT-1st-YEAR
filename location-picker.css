@@ -1,0 +1,238 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #eaeded;
+  color: #0f1111;
+}
+
+.amazon-header {
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  padding: 0 24px;
+  background-color: #131921;
+}
+
+.amazon-logo {
+  width: 108px;
+  height: auto;
+}
+
+.location-page {
+  display: grid;
+  place-items: start center;
+  min-height: calc(100vh - 60px);
+  padding: 32px 16px;
+}
+
+.location-card {
+  width: min(720px, 100%);
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(15, 17, 17, 0.12);
+  padding: 24px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.location-card h1 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.close-btn {
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #f0f2f2;
+  color: #0f1111;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.card-copy {
+  margin: 12px 0 20px;
+  color: #565959;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.saved-address {
+  margin-bottom: 18px;
+}
+
+.section-title {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.address-option {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #007185;
+  border-radius: 8px;
+  background: #f7feff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.address-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.address-meta {
+  color: #565959;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.use-location-btn {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #d5d9d9;
+  border-radius: 999px;
+  background: #fff;
+  color: #007185;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 18px 0;
+  color: #565959;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #d5d9d9;
+}
+
+.divider span {
+  padding: 0 12px;
+}
+
+.pin-row,
+.area-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+}
+
+.pin-input,
+.field-input {
+  width: 100%;
+  min-height: 40px;
+  padding: 0 12px;
+  border: 1px solid #888c8c;
+  border-radius: 8px;
+  font-size: 14px;
+  background: #fff;
+}
+
+.pin-input:focus,
+.field-input:focus {
+  outline: 2px solid #f3a847;
+  outline-offset: 1px;
+}
+
+.apply-btn {
+  min-width: 90px;
+  min-height: 40px;
+  border: 1px solid #d5d9d9;
+  border-radius: 999px;
+  background: #ffd814;
+  color: #0f1111;
+  cursor: pointer;
+}
+
+.button-row {
+  margin-top: 18px;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.map-panel {
+  margin-top: 12px;
+  padding: 10px;
+  background: #f7fafa;
+  border: 1px solid #d5d9d9;
+  border-radius: 10px;
+}
+
+#locationMap {
+  width: 100%;
+  min-height: 360px;
+  border-radius: 8px;
+}
+
+.primary-btn {
+  width: 100%;
+  min-height: 40px;
+  border: 1px solid #fcd200;
+  border-radius: 999px;
+  background-color: #ffd814;
+  color: #0f1111;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+@media (max-width: 960px) {
+  #locationMap {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 600px) {
+  .amazon-header {
+    padding: 0 16px;
+  }
+
+  .location-page {
+    padding: 16px 10px;
+  }
+
+  .location-card {
+    padding: 18px;
+  }
+
+  .location-card h1 {
+    font-size: 24px;
+  }
+
+  .pin-row,
+  .area-row {
+    grid-template-columns: 1fr;
+  }
+}
